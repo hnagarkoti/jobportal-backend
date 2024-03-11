@@ -17,7 +17,9 @@ export class CandidatesService {
   }
 
   async findAll(): Promise<Candidates[]> {
-    return await this.candidatesRepository.findAll<Candidates>({});
+    return await this.candidatesRepository.findAll<Candidates>({
+      order: [['score', 'DESC']],
+    });
   }
   async findOneByEmail(email: string): Promise<Candidates> {
     return await this.candidatesRepository.findOne<Candidates>({

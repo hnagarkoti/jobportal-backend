@@ -7,4 +7,10 @@ export class Skills extends Model<Skills> {
     allowNull: false,
   })
   name: string;
+
+  @Column({
+    type: DataType.INTEGER,
+    defaultValue: 0,
+  })
+  score: number;
 }

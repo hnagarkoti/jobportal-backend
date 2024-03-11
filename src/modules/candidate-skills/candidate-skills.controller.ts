@@ -59,6 +59,30 @@ export class CandidateSkillsController {
     return skills;
   }
 
+  // @UseGuards(AuthGuard('jwt'))
+  // @Put('candidate/:candidateId')
+  // async candidateUpdate(
+  //   @Param('candidateId') candidateId: number,
+  //   @Body() candidateSkill: CandiateSkillsDto,
+  //   @Request() req,
+  // ): Promise<CandidateSkillsEntity> {
+  //   // get the number of row affected and the updated skill
+  //   const { numberOfAffectedRows, updatedSkill } =
+  //     await this.candidateSkillsService.updateByCandidateId(
+  //       candidateId,
+  //       candidateSkill,
+  //     );
+
+  //   // if the number of row affected is zero,
+  //   // it means the skill doesn't exist in our db
+  //   if (numberOfAffectedRows === 0) {
+  //     throw new NotFoundException("This Candidate Skill doesn't exist");
+  //   }
+
+  //   // return the updated skill
+  //   return updatedSkill;
+  // }
+
   @UseGuards(AuthGuard('jwt'))
   @Post()
   async create(

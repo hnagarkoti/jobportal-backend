@@ -62,6 +62,12 @@ export class Candidates extends Model<Candidates> {
   expected_ctc: number;
 
   @Column({
+    type: DataType.INTEGER,
+    allowNull: false,
+  })
+  experience: number;
+
+  @Column({
     type: DataType.DECIMAL(10, 2),
     defaultValue: 0,
   })

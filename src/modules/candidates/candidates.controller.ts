@@ -24,7 +24,6 @@ export class CandidatesController {
     return await this.candidateService.findAll();
   }
 
-  @UseGuards(AuthGuard('jwt'))
   @Get(':id')
   async findOne(@Param('id') id: number): Promise<CandidateEntity> {
     // find the candidate with this id
